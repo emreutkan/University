@@ -1,0 +1,26 @@
+T9 - text detector
+"T9 is a predictive text technology for mobile phones (specifically those that contain a 3×4 numeric keypad)" - Wikipedia.
+Most old phones used this technology to type a message based on clicked numbers. You can check the visual
+layout from the internet, but the textual format is given below.
+----------------------------------
+1           2->"abc"    3->"def"
+4->"ghi"    5->"jkl"    6->"mno"
+7->"pqrs"   8->"tuv"    9->"wxyz"
+----------------------------------
+
+For simplicity, the words displayed to the user will be only limited to the characters in the corresponding numbers.
+In other words, if the user clicks 224, it can be interpreted as any combination of the letters from the 2,2 and 4.
+Some examples are "aha","aia","bia","aga" etc.
+As the numbers increase, more complicated words can be written. For example, 28222747 can be interpreted as "atabaris".
+
+For a given number and the list of words. Write a program with a dynamic programming approach to returning possible words
+that exist in the number.
+For the input 3662277 and string words[] = {"foo","bar","baz","foobar","emo","cap","car","cat"}
+it should return an array (vector,list etc.) with the words {"foo","bar","foobar","emo","cap","car"}
+
+For example "baz" is not included because "229" is not exist in "3662277".
+
+Note: The fundamental rule of dynamic programming is that the repetitive calculations to solve a problem can be
+reduced by storing them. To solve this problem, you have to do a partial text/number search in some way.
+It will take a considerable amount of time as the list size and the words increase; maybe this can be reduced by using
+the help of some data structures and a dynamic programming approach.
